@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Oldtimer';
+    src: url('fonts/Oldtimer.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('fonts/Montserratarm-Bold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('fonts/Montserratarm-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}

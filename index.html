@@ -1,68 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo Upload and Crop</title>
+    <title>Kitchen Admin Panel</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" rel="stylesheet">
-    <style>
-        .upload-container {
-            width: 300px;
-            height: 300px;
-            border: 2px dashed #ccc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            position: relative;
-            text-align: center;
-        }
-        .upload-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: none;
-        }
-        .upload-container.active img {
-            display: block;
-        }
-        .upload-container.active .placeholder {
-            display: none;
-        }
-        #cropModal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            align-items: center;
-            justify-content: center;
-        }
-        #cropModal .modal-content {
-            background: white;
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
-        }
-        #cropModal .modal-content button {
-            margin: 10px;
-        }
-        #imageToCrop {
-            max-width: 100%;
-            max-height: 400px;
-        }
-    </style>
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="fonts.css">
 </head>
+
 <body>
-    <div class="upload-container" onclick="document.getElementById('fileInput').click()">
-        <div class="placeholder">
-            <span>Ավելացնել լուսանկար</span>
+    <header>
+        <button class="logout-button">Logout</button>
+    </header>
+<main>
+
+
+    <div class="description">
+        <div class="cont">
+            <div class="title-section">
+                <input type="text" class="title-input" value="Վերնագիր">
+            </div>
+            <div class="upload-container" onclick="document.getElementById('fileInput1').click()">
+                <div class="placeholder">Ավելացնել լուսանկար</div>
+                <img id="uploadedImage1" src="#" alt="Uploaded Image">
+                <input type="file" id="fileInput1" style="display: none;" accept="image/*"
+                    onchange="openCropModal(event, 1, 477, 451)">
+            </div>
         </div>
-        <img id="uploadedImage" src="#" alt="Uploaded Image">
-        <input type="file" id="fileInput" style="display: none;" accept="image/*" onchange="openCropModal(event)">
+        <textarea placeholder="Գրեք կարճ նկարագրություն..."></textarea>
     </div>
+
+    <div class="recipe">
+        <div class="con_recipe">
+            <h2 class="title">Բաղադրատոմս</h2>
+            <textarea placeholder="Գրեք բաղադրամաս..."></textarea>
+        </div>
+        <div class="upload-container" onclick="document.getElementById('fileInput3').click()">
+            <div class="placeholder">Ավելացնել Տեսահոլովակ</div>
+            <img id="uploadedImage3" src="#" alt="Uploaded Image">
+            <input type="file" id="fileInput3" style="display: none;" accept="image/*"
+                onchange="openCropModal(event, 3, 743, 342)">
+        </div>
+    </div>
+
+    <div class="more">
+        <div class="steps">
+            <h2 class="title">Պատրաստման Ընթացքը</h2>
+            <textarea placeholder="Գրեք պատրաստման գործընթացի քալերը..."></textarea>
+        </div>
+        <div class="upload-container" onclick="document.getElementById('fileInput4').click()">
+            <div class="placeholder">Ավելացնել լուսանկար</div>
+            <img id="uploadedImage4" src="#" alt="Uploaded Image">
+            <input type="file" id="fileInput4" style="display: none;" accept="image/*"
+                onchange="openCropModal(event, 4, 477, 451)">
+        </div>
+    </div>
+    </div>
+<div class="btn">
+    <button class="save-button">Հաստատել <img src="img/Vector (1).svg" alt=""></button>
+</div>
 
     <div id="cropModal">
         <div class="modal-content">
@@ -76,50 +74,8 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
-    <script>
-        let cropper;
-        const cropModal = document.getElementById('cropModal');
-        const imageToCrop = document.getElementById('imageToCrop');
-
-        function openCropModal(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    imageToCrop.src = e.target.result;
-                    cropModal.style.display = 'flex';
-                    cropper = new Cropper(imageToCrop, {
-                        viewMode: 1,
-                        ready: function () {
-                            const containerData = cropper.getContainerData();
-                            cropper.setCropBoxData({
-                                left: (containerData.width - 477) / 2,
-                                top: (containerData.height - 451) / 2,
-                                width: 477,
-                                height: 451
-                            });
-                        }
-                    });
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        function confirmCrop() {
-            const canvas = cropper.getCroppedCanvas({
-                width: 477,
-                height: 451
-            });
-            const imgElement = document.getElementById('uploadedImage');
-            imgElement.src = canvas.toDataURL();
-            document.querySelector('.upload-container').classList.add('active');
-            closeCropModal();
-        }
-
-        function closeCropModal() {
-            cropModal.style.display = 'none';
-            cropper.destroy();
-        }
-    </script>
+    <script src="script.js"></script>
+</main>
 </body>
+
 </html>

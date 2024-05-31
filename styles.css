@@ -1,0 +1,235 @@
+/* Default styles */
+body {
+    font-family: 'Montserrat-Regular', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #7F7F7F;
+}
+
+header {
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title-input {
+    font-family: 'Oldtimer', sans-serif;
+    font-size: 48px;
+    max-width: 473px;
+    color: #F58F29;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.title {
+    font-family: 'Oldtimer', sans-serif;
+    font-size: 48px;
+    color: #F58F29;
+}
+
+.con_recipe .title{
+    text-align: start;
+    margin-left: 24px;
+}
+
+header .logout-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button,
+.save-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button {
+    background-color: #4caf50;
+}
+.more{
+    align-items: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.save-button {
+    background-color: #F58F29;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+}
+.save-button img{
+    margin-left: 8px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 20px 0;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.con_recipe textarea {
+    width: 432px;
+    height: 129px;
+    border-radius: 12px;
+    border: 2px solid #7f7f7f;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+.recipe .upload-container {
+    width: 743px;
+    height: 342px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    border-radius: 12px;
+    border: 2px solid #7f7f7f;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.recipe .upload-container img{
+    width: 743px;
+    height: 342px;
+
+}
+
+
+.recipe {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.con_recipe {
+    width: 477px;
+    height: 342px;
+    border: 2px solid #7f7f7f;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.description {
+    align-items: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.container h2 {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    color: #F58F29;
+    font-family: 'Oldtimer', sans-serif;
+}
+
+.upload-container {
+    width: 477px;
+    height: 451px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    border-radius: 12px;
+    border: 2px solid #7f7f7f;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.upload-container img {
+    width: 477px;
+    height: 451px;
+    border-radius: 12px;
+    object-fit: cover;
+    display: none;
+}
+
+.upload-container.active img {
+    display: block;
+}
+
+.upload-container.active .placeholder {
+    font-size: 20px;
+    display: none;
+}
+
+textarea {
+    width: 743px;
+    font-size: 20px;
+    height: 451px;
+    border-radius: 12px;
+    border: 2px solid #7f7f7f;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+#cropModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+#cropModal .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#cropModal .modal-content button {
+    margin: 10px;
+}
+
+#imageToCrop {
+    max-width: 100%;
+    max-height: 400px;
+}
+
+.btn{
+    text-align: -webkit-right;
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 600px) {
+    .container,
+    .upload-container,
+    textarea,
+    .recipe .upload-container {
+        width: 100%;
+    }
+}
