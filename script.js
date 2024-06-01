@@ -48,4 +48,5 @@ function confirmCrop() {
 function closeCropModal() {
     cropModal.style.display = 'none';
     cropper.destroy();
+    imageToCrop.src = ''; // Reset the src of the image to crop
 }

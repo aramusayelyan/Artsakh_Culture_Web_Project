@@ -12,70 +12,75 @@
 
 <body>
     <header>
-        <button class="logout-button">Logout</button>
+        <img src="Logo.png" alt="Photo not found">
+        <nav>
+            <a href="#"><strong>Թարգմանիչ</strong></a>
+            <a href="#">Մեր Մասին</a>
+            <a href="#">Նպատակ</a>
+            <a href="#">Մշակույթ</a>
+            <a href="#">Խոհանոց</a>
+        </nav>
     </header>
-<main>
 
+    <div class="main_bg"></div>
 
-    <div class="description">
-        <div class="cont">
-            <div class="title-section">
-                <input type="text" class="title-input" value="Վերնագիր">
+    <main>
+        <div class="description">
+            <div class="cont">
+                <div class="title-section">
+                    <input type="text" class="title-input" value="Վերնագիր">
+                </div>
+                <div class="upload-container" onclick="document.getElementById('fileInput1').click()">
+                    <div class="placeholder">Ավելացնել լուսանկար</div>
+                    <img id="uploadedImage1" src="#" alt="Uploaded Image" style="display: none;">
+                    <input type="file" id="fileInput1" style="display: none;" accept="image/*" onchange="openCropModal(event, 1, 477, 451)">
+                </div>
             </div>
-            <div class="upload-container" onclick="document.getElementById('fileInput1').click()">
+            <textarea placeholder="Գրեք կարճ նկարագրություն..."></textarea>
+        </div>
+
+        <div class="recipe">
+            <div class="con_recipe">
+                <h2 class="title">Բաղադրատոմս</h2>
+                <textarea placeholder="Գրեք բաղադրամաս..."></textarea>
+            </div>
+            <div class="upload-container" onclick="document.getElementById('fileInput2').click()">
                 <div class="placeholder">Ավելացնել լուսանկար</div>
-                <img id="uploadedImage1" src="#" alt="Uploaded Image">
-                <input type="file" id="fileInput1" style="display: none;" accept="image/*"
-                    onchange="openCropModal(event, 1, 477, 451)">
+                <img id="uploadedImage2" src="#" alt="Uploaded Image" style="display: none;">
+                <input type="file" id="fileInput2" style="display: none;" accept="image/*" onchange="openCropModal(event, 2, 477, 451)">
             </div>
         </div>
-        <textarea placeholder="Գրեք կարճ նկարագրություն..."></textarea>
-    </div>
 
-    <div class="recipe">
-        <div class="con_recipe">
-            <h2 class="title">Բաղադրատոմս</h2>
-            <textarea placeholder="Գրեք բաղադրամաս..."></textarea>
-        </div>
-        <div class="upload-container" onclick="document.getElementById('fileInput3').click()">
-            <div class="placeholder">Ավելացնել Տեսահոլովակ</div>
-            <img id="uploadedImage3" src="#" alt="Uploaded Image">
-            <input type="file" id="fileInput3" style="display: none;" accept="image/*"
-                onchange="openCropModal(event, 3, 743, 342)">
-        </div>
-    </div>
-
-    <div class="more">
-        <div class="steps">
-            <h2 class="title">Պատրաստման Ընթացքը</h2>
-            <textarea placeholder="Գրեք պատրաստման գործընթացի քալերը..."></textarea>
-        </div>
-        <div class="upload-container" onclick="document.getElementById('fileInput4').click()">
-            <div class="placeholder">Ավելացնել լուսանկար</div>
-            <img id="uploadedImage4" src="#" alt="Uploaded Image">
-            <input type="file" id="fileInput4" style="display: none;" accept="image/*"
-                onchange="openCropModal(event, 4, 477, 451)">
-        </div>
-    </div>
-    </div>
-<div class="btn">
-    <button class="save-button">Հաստատել <img src="img/Vector (1).svg" alt=""></button>
-</div>
-
-    <div id="cropModal">
-        <div class="modal-content">
-            <h2>Crop Your Image</h2>
-            <div>
-                <img id="imageToCrop" src="#" alt="Image to Crop">
+        <div class="more">
+            <div class="steps">
+                <h2 class="title">Պատրաստման Ընթացքը</h2>
+                <textarea placeholder="Գրեք պատրաստման գործընթացի քալերը..."></textarea>
             </div>
-            <button onclick="confirmCrop()">Confirm</button>
-            <button onclick="closeCropModal()">Cancel</button>
+            <div class="upload-container" onclick="document.getElementById('fileInput3').click()">
+                <div class="placeholder">Ավելացնել լուսանկար</div>
+                <img id="uploadedImage3" src="#" alt="Uploaded Image" style="display: none;">
+                <input type="file" id="fileInput3" style="display: none;" accept="image/*" onchange="openCropModal(event, 3, 477, 451)">
+            </div>
         </div>
-    </div>
+
+        <div class="btn">
+            <button class="save-button">Հաստատել <img src="img/Vector (1).svg" alt=""></button>
+        </div>
+
+        <div id="cropModal" style="display: none;">
+            <div class="modal-content">
+                <h2>Crop Your Image</h2>
+                <div>
+                    <img id="imageToCrop" src="#" alt="Image to Crop">
+                </div>
+                <button onclick="confirmCrop()">Confirm</button>
+                <button onclick="closeCropModal()">Cancel</button>
+            </div>
+        </div>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
     <script src="script.js"></script>
-</main>
 </body>
 
 </html>
